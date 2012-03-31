@@ -1,3 +1,4 @@
+
 -- aperiodpiece/conf.lua
 -- Configuration file for game window
 
@@ -5,10 +6,10 @@ function love.conf(t)
     t.title = "A Period Piece"        -- The title of the window the game is in (string)
     t.author = "Josh Douglass-Molloy, Jaime von Schwarzburg"        -- The author of the game (string)
     t.identity = nil            -- The name of the save directory (string)
-    t.version = "7.0.2"               -- The LÖVE version this game was made for (number)
+    t.version = "0.7.2"               -- The LÖVE version this game was made for (number)
     t.console = true           -- Attach a console (boolean, Windows only)
-    t.screen.width = 640        -- The window width (number)
-    t.screen.height = 640       -- The window height (number)
+    t.screen.width = 800        -- The window width (number)
+    t.screen.height = 400       -- The window height (number)
     t.screen.fullscreen = false -- Enable fullscreen (boolean)
     t.screen.vsync = true       -- Enable vertical sync (boolean)
     t.screen.fsaa = 0           -- The number of FSAA-buffers (number)
