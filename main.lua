@@ -25,6 +25,7 @@ clicktolerance = chary
 charlimit = 36
 --vars
 successes = 0
+failures = 0
 victories = 0
 subvictories = 0
 currclickpoints = {}
@@ -43,18 +44,27 @@ function love.mousepressed(x, y, button)
 
 if state == runninground then
 
-	for i = 1, #currclickpoints do
-		if math.abs(currclickpoints[i][1] - x) < clicktolerance and math.abs(currclickpoints[i][2] - y) < clicktolerance then
-			successes = successes + 1
-			table.remove(currclickpoints, i)
-			break
-		end
+	if correctclick(x, y) then
+		successes = successes + 1
+	else
+		failures = failures + 1
 	end
 	print(x .. ", " .. y)
 
 end
+
 end
 
+
+function correctclick(x, y)
+	for i = 1, #currclickpoints do
+		if math.abs(currclickpoints[i][1] - x) < clicktolerance and math.abs(currclickpoints[i][2] - y) < clicktolerance then
+			table.remove(currclickpoints, i)
+			return true
+		end
+	end
+	return false
+end
 
 function love.update(dt)
 
@@ -74,12 +84,13 @@ function love.update(dt)
 	elseif state == gameover then
 		currstring = "GAME OVER"
 	end
+
 end
 
 function love.draw()
 
 	love.graphics.print("Successes: " .. successes, 0, 0)
-
+	love.graphics.print("Failures: " .. failures, 600, 0)
 
 	love.graphics.printf(currstring, initxdisplace, initydisplace, 360, "left")
 
