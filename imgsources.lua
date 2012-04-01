@@ -8,6 +8,7 @@ pics = {
 
 	--gentleman
 	{
+
 		love.graphics.newImage("images/hoboGentleman1.png"),
 		love.graphics.newImage("images/hoboGentleman2.png")
 	},

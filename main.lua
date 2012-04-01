@@ -15,7 +15,7 @@ gameover = 5
 
 --constants
 	--pixels
-initxdisplace = 230
+initxdisplace = 330
 initydisplace = 20
 charx = 14
 chary = 16
@@ -25,7 +25,7 @@ clicktolerance = chary
 
 charlimit = 36
 --other
-roundlimit = 1
+roundlimit = 2
 bosslimit = #speeches
 
 
@@ -36,15 +36,15 @@ victories = 0
 subvictories = 0
 currclickpoints = {}
 currstring = ""
-
 brokenstring = ""
 
 
 function love.load()
 	love.graphics.setBackgroundColor(0, 0, 0)
 	love.graphics.setFont( monospaced )
-
+	curraudio = introvoices[#introvoices]
 	state = init
+	curraudio:play()
 end
 
 
@@ -57,11 +57,21 @@ if state == runninground then
 	else
 		failures = failures + 1
 	end
-	print(x .. ", " .. y)
-
 end
 
 end
+
+function love.keypressed(key)
+
+	if state==init and key == "." and curraudio:isStopped() then
+		state = runningintro
+	elseif state == runningintro and key == "." and curraudio:isStopped() then
+		state = printing
+	end
+
+
+end
+
 
 
 function correctclick(x, y)
@@ -76,9 +86,10 @@ end
 
 function love.update(dt)
 
-	if state == init then
-		state = printing
-	elseif state == runningintro then
+	if state == runningintro then
+		currstring = "A NEW OPPONENT"
+		curraudio = introvoices[victories + 1]
+		curraudio:play()
 
 	elseif state == printing then
 		currclickpoints = {}
@@ -93,22 +104,21 @@ function love.update(dt)
 		end
 	elseif state == roundend then
 
-			if successes - failures < 2 then
+			if successes < failures then
 				state = gameover
 			else
 				subvictories = (subvictories + 1) % roundlimit
 
 				if(subvictories == 0) then
 					victories = victories + 1
-					print("VICTORIES: " .. victories)
 				end
-
+--[[
 				if( victories < 1) then
 					state = runningintro
 				else
 					state = gameover
 				end
-
+]]--
 
 			end
 	elseif state == gameover then
@@ -119,9 +129,11 @@ end
 
 function love.draw()
 
-
+	if state == init then
+		love.graphics.printf(introtext, initxdisplace, initydisplace, 360, "left")
+	else
 	love.graphics.print("Successes: " .. successes, 0, 0)
-	love.graphics.print("Failures: " .. failures, 600, 0)
+	love.graphics.print("Failures: " .. failures, 700, 0)
 
 
 	love.graphics.printf(currstring, initxdisplace, initydisplace, 360, "left")
@@ -130,14 +142,7 @@ function love.draw()
 	love.graphics.scale(0.5, 0.5)
 	love.graphics.draw(wilbert, 0, 200)
 	love.graphics.pop()
-
-	--	love.graphics.setColor(0, 255, 0, 128)
---	for i = 1, #currclickpoints do
-		--print("X: " .. currclickpoints[i][1] .. " Y: " .. currclickpoints[i][2])
-		--love.graphics.rectangle("fill", currclickpoints[i][1] - charx/2, currclickpoints[i][2] - chary/2, charx, chary)
-
-	--end
-	--love.graphics.setColor(255, 255, 255, 255)
+	end
 
 end
 
