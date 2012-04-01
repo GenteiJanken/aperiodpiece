@@ -26,7 +26,7 @@ clicktolerance = chary
 charlimit = 36
 --other
 roundlimit = 2
-bosslimit = #speeches
+bosslimit = 3
 
 
 --vars
@@ -37,6 +37,7 @@ subvictories = 0
 currclickpoints = {}
 currstring = ""
 brokenstring = ""
+currenemypic = wilbert
 
 
 function love.load()
@@ -65,6 +66,9 @@ function love.keypressed(key)
 
 	if state==init and key == "." and curraudio:isStopped() then
 		state = runningintro
+		currenemypic = pics[victories + 1][subvictories +1]
+		curraudio = introvoices[victories + 1]
+		curraudio:play()
 	elseif state == runningintro and key == "." and curraudio:isStopped() then
 		state = printing
 	end
@@ -88,8 +92,7 @@ function love.update(dt)
 
 	if state == runningintro then
 		currstring = "A NEW OPPONENT"
-		curraudio = introvoices[victories + 1]
-		curraudio:play()
+
 
 	elseif state == printing then
 		currclickpoints = {}
@@ -112,14 +115,18 @@ function love.update(dt)
 				if(subvictories == 0) then
 					victories = victories + 1
 				end
---[[
-				if( victories < 1) then
-					state = runningintro
-				else
-					state = gameover
-				end
-]]--
 
+			if victories > bosslimit then
+				state = gameover
+			else
+				successes = 0
+				failures = 0
+
+				currenemypic = pics[victories + 1][subvictories +1]
+				curraudio = introvoices[victories + 1]
+				curraudio:play()
+				state = runningintro
+			end
 			end
 	elseif state == gameover then
 		currstring = "GAME OVER"
@@ -133,7 +140,7 @@ function love.draw()
 		love.graphics.printf(introtext, initxdisplace, initydisplace, 360, "left")
 	else
 	love.graphics.print("Successes: " .. successes, 0, 0)
-	love.graphics.print("Failures: " .. failures, 700, 0)
+	love.graphics.print("Failures: " .. failures, 0, 20)
 
 
 	love.graphics.printf(currstring, initxdisplace, initydisplace, 360, "left")
@@ -142,6 +149,14 @@ function love.draw()
 	love.graphics.scale(0.5, 0.5)
 	love.graphics.draw(wilbert, 0, 200)
 	love.graphics.pop()
+
+	love.graphics.push()
+	love.graphics.scale(0.75, 0.75)
+
+	love.graphics.draw(currenemypic, 1050, 0)
+
+	love.graphics.pop()
+
 	end
 
 end
