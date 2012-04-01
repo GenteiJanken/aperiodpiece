@@ -124,7 +124,7 @@ function love.draw()
 	love.graphics.print("Failures: " .. failures, 600, 0)
 
 
---	love.graphics.printf(currstring, initxdisplace, initydisplace, 360, "left")
+	love.graphics.printf(currstring, initxdisplace, initydisplace, 360, "left")
 
 	love.graphics.push()
 	love.graphics.scale(0.5, 0.5)
