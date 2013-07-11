@@ -1,11 +1,7 @@
 wilbert = love.graphics.newImage("images/wilbert_combined.png")
 
 pics = {
-	--prototype
-	{
-
-	},
-
+	
 	--gentleman
 	{
 

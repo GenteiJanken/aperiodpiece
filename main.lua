@@ -1,9 +1,9 @@
---main.lua - main file for MolyJam 2012 game ``A Period Piece"
+	--main.lua - main file for MolyJam 2012 game ``A Period Piece"
 
-require ("audiosources.lua")
-require ("imgsources.lua")
-require ("text.lua")
-require("clickpoints.lua")
+require "audiosources"
+require "imgsources"
+require "text"
+require "clickpoints"
 
 --Game States
 init = 0

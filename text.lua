@@ -22,7 +22,7 @@ speeches = {
 	--gentleman
 	{
 		--round 1 DONE
-		"I remember it as though it were yesterday I was stationed in Amoy right after we gave the coolies a royal rogering they were rather rankled about being shown the business end of England's manhood Her Majesty's Royal Navy 'twas in the harbour we found the mother of all hauls enough opium to feed a Frenchman's folly for the next five weeks the coolies spent every waking hour dragging case after case onto ships back home to England most fair traders in England sell the stuff at exorbitant prices",
+		"I remember it as though it were yesterday I was stationed in Amoy right after we gave the coolies a royal rogering they were rather rankled about being shown the business end of England's manhood Her Majesty's Royal Navy 'twas in the harbour we found the mother of all hauls enough opium to feed a Frenchman's folly for the next five years the coolies spent every waking hour dragging case after case onto ships back home to England most fair traders in England sell the stuff at exorbitant prices",
 		--round 2 DONE
 		"You remind me of another character I met whilst sojourning in the subcontinent British Raj as we have apparently taken to calling it was filled to the brim with your sort dark spots who had taken to aping civilised fashion were trying times to fall upon them I would not shed a single tear"
 
@@ -31,9 +31,9 @@ speeches = {
 	--scotch
 	{
 		--round 1
-		"I were walking down the road when I happened upon a wee fairy man accosting a lass with hair down to her arse the wrong cock he cannae see me so upon him I sneaked with the purest of intentions controlling me feet kick at the bastard the girl cries out in fear the London dandy runs",
+		"I were walking down the road when I happened upon a wee fairy man accosting a lass with hair down to her **** the wrong **** he cannae see me so upon him I sneaked with the purest of intentions controlling me feet kick at the ******* the girl cries out in fear the London dandy runs",
 		--round 2
-		"The lads and me were down at the Crown and Queer drinking our weight in scrumpy when some thieving Lowlander wanders in with me da's Sunday best I tell you now I certainly tossed the wee fucker's caber back to whence he came the landlord gives me his thanks a pint of his finest and a night with his daughter"
+		"The lads and me were down at the Crown and Queer drinking our weight in scrumpy when some thieving Lowlander wanders in with me da's Sunday best I tell you now I certainly tossed the wee ******'s caber back to whence he came the landlord gives me his thanks a pint of his finest and a night with his daughter"
 	},
 
 
