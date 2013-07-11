@@ -64,11 +64,13 @@ end
 
 function love.keypressed(key)
 
-	if state==init and key == "." and curraudio:isStopped() then
+	if state==init then
+		curraudio:stop()
 		state = runningintro
 		currenemypic = pics[victories + 1][subvictories +1]
 		curraudio = introvoices[victories + 1]
 		curraudio:play()
+		
 	elseif state == runningintro and key == "." and curraudio:isStopped() then
 		state = printing
 	end

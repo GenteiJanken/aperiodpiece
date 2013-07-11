@@ -31,9 +31,9 @@ speeches = {
 	--scotch
 	{
 		--round 1
-		"I were walking down the road when I happened upon a wee fairy man accosting a lass with hair down to her **** the wrong **** he cannae see me so upon him I sneaked with the purest of intentions controlling me feet kick at the ******* the girl cries out in fear the London dandy runs",
+		"I were walking down the road when I happened upon a wee fairy man accosting a lass with hair down to her a*** the wrong c*** he cannae see me so upon him I sneaked with the purest of intentions controlling me feet kick at the b****** the girl cries out in fear the London dandy runs",
 		--round 2
-		"The lads and me were down at the Crown and Queer drinking our weight in scrumpy when some thieving Lowlander wanders in with me da's Sunday best I tell you now I certainly tossed the wee ******'s caber back to whence he came the landlord gives me his thanks a pint of his finest and a night with his daughter"
+		"The lads and me were down at the Crown and Queer drinking our weight in scrumpy when some thieving Lowlander wanders in with me da's Sunday best I tell you now I certainly tossed the wee f*****'s caber back to whence he came the landlord gives me his thanks a pint of his finest and a night with his daughter"
 	},
 
 
